@@ -11,7 +11,7 @@
     const unsubscribe = orchestrator.getStore().subscribe(state => {
       if (state.uploadedFile) {
         uploadedFile = state.uploadedFile;
-        if (!files.find(f => f.name === uploadedFile.name)) {
+        if (uploadedFile && !files.find(f => f.name === uploadedFile.name)) {
           files = [...files, uploadedFile];
         }
       }
@@ -50,7 +50,7 @@
       await orchestrator.handleFileUpload(file);
     } catch (error) {
       console.error('File upload failed:', error);
-      alert(`File upload failed: ${error.message}`);
+      alert(`File upload failed: ${(error as Error).message}`);
     }
   }
 
@@ -98,6 +98,8 @@
       on:drop={handleDrop}
       on:dragover={handleDragOver}
       on:dragleave={handleDragLeave}
+      role="button"
+      tabindex="0"
     >
       <div class="space-y-4">
         <div class="mx-auto w-12 h-12 text-gray-400">

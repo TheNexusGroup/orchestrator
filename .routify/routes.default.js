@@ -6,29 +6,16 @@ export const routes = {
   "id": "_default",
   "name": "",
   "file": {
-    "path": "src/routes",
-    "dir": "src",
-    "base": "routes",
-    "ext": "",
-    "name": "routes"
+    "path": "src/routes/_module.svelte",
+    "dir": "src/routes",
+    "base": "_module.svelte",
+    "ext": ".svelte",
+    "name": "_module"
   },
+  "asyncModule": () => import('../src/routes/_module.svelte'),
   "rootName": "default",
   "routifyDir": import.meta.url,
   "children": [
-    {
-      "meta": {},
-      "id": "_default__layout_svelte",
-      "name": "+layout",
-      "file": {
-        "path": "src/routes/+layout.svelte",
-        "dir": "src/routes",
-        "base": "+layout.svelte",
-        "ext": ".svelte",
-        "name": "+layout"
-      },
-      "asyncModule": () => import('../src/routes/+layout.svelte'),
-      "children": []
-    },
     {
       "meta": {},
       "id": "_default_api_svelte",

@@ -140,7 +140,7 @@
           bind:value={headers}
           rows="3"
           class="w-full border border-gray-300 rounded-md px-3 py-2 text-sm font-mono"
-          placeholder='{"Authorization": "Bearer token", "Content-Type": "application/json"}'
+          placeholder="{&quot;Authorization&quot;: &quot;Bearer token&quot;, &quot;Content-Type&quot;: &quot;application/json&quot;}"
         ></textarea>
       </div>
 

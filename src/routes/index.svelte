@@ -47,7 +47,7 @@
         orchestrator.setState('lastApiResult', result);
       } catch (error) {
         console.error('API call failed:', error);
-        orchestrator.setState('lastApiError', error.message);
+        orchestrator.setState('lastApiError', (error as Error).message);
       }
     }
   }

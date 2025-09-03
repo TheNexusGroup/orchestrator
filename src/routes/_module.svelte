@@ -1,7 +1,7 @@
-<script lang="ts">
+<script>
   import '../app.css';
   import { Router } from '@roxi/routify';
-  import { routes } from '../.routify/routes';
+  import { routes } from '../.routify/routes.default.js';
   
   export let router = new Router({ routes });
 </script>

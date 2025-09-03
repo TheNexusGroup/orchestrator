@@ -1,5 +1,5 @@
 import { writable, type Writable } from 'svelte/store';
-import type { WebSocket } from 'ws';
+// WebSocket type will be provided by browser environment
 import YAML from 'yaml';
 
 export interface OrchestratorConfig {
@@ -23,7 +23,7 @@ export class Orchestrator {
   private static instance: Orchestrator;
   private config: OrchestratorConfig;
   private store: Writable<StateStore> = writable({});
-  private websocket: WebSocket | null = null;
+  private websocket: any = null;
   private hooks: Record<string, Function[]> = {};
   private middleware: Function[] = [];
 
@@ -105,7 +105,7 @@ export class Orchestrator {
         this.runHooks('websocketConnect', { url: wsUrl });
       };
 
-      this.websocket.onmessage = (event) => {
+      this.websocket.onmessage = (event: any) => {
         const data = this.applyMiddleware(JSON.parse(event.data));
         this.setState('websocketData', data);
       };
