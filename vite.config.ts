@@ -8,7 +8,7 @@ export default defineConfig({
     svelte()
   ],
   server: {
-    port: 9292,
+    port: 7323,
     host: true
   },
   build: {
